@@ -90,7 +90,7 @@ public class Employee extends Person implements ContractDepartment {
         System.out.println("Employee Age " + getAge());
         System.out.println("Employee Address: " + getAddress());
         System.out.println("Employee Email: " + getEmail());
-        System.out.println("Entry Data: " + getEntryDate());
+        System.out.println("Entry Date: " + getEntryDate());
         System.out.println("Contract Duration: " + getContractDuration() + " months");
         System.out.println("Notice Period: " + getNoticePeriod() + " days");
         System.out.println("projects: ");
@@ -103,7 +103,7 @@ public class Employee extends Person implements ContractDepartment {
         
         System.out.println("--------------------------");
     }
-    
+
     /**
     * Validates if a given string corresponds to a valid enum value in the EmployeePosition enum.
     *
@@ -129,8 +129,7 @@ public class Employee extends Person implements ContractDepartment {
     * @param grossSalary       The gross salary of the employee.
     * @param tax               The tax rate applied to the gross salary.
     */
-    
-    public void calculateSalary(EmployeePosition employeePosition, double grossSalary, double tax) {
+    public double calculateSalary(EmployeePosition employeePosition, double grossSalary, double tax) {
         double netSalary= grossSalary - (grossSalary * tax);
         
         if (isValidEnum(employeePosition.name())) {
@@ -139,7 +138,7 @@ public class Employee extends Person implements ContractDepartment {
         else {
             System.err.println("Invalid employee position: " + employeePosition);
         }
-        
+        return netSalary;
     }
     /**
     * Adds a project to the list of projects the employee is involved in.
