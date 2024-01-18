@@ -39,3 +39,4 @@ Database Setup (SQL)
 Execute the SQL queries provided in the respective database management system.
 Enjoy managing your employees with this comprehensive Employee Management System!
 
+P.S. Test class is executed on terminal using command: mvn clean test -X
