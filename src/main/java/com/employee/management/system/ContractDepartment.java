@@ -17,3 +17,4 @@ public interface ContractDepartment {
     int getNoticePeriod();
     void setNoticePeriod(int noticePeriod);
 }
+
