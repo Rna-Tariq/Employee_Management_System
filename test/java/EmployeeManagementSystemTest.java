@@ -11,17 +11,22 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- *
- * @author osx
+ * Test class for the Employee Management System.
+ * This class contains unit tests for various functionalities of the system.
  */
 
 public class EmployeeManagementSystemTest {
     
     private Employee employee;
     private Project project;
-    
+
+    /**
+     * Set up test fixtures before each test method.
+     */
+
     @BeforeEach
     void setUp(){
+        // Create an employee and a project for testing
         employee = new Employee(1, 
                                 "Jane Doe", 
                                 23, 
@@ -36,7 +41,12 @@ public class EmployeeManagementSystemTest {
                                5, 
                                "18-01-2024");
     }
-    
+
+    /**
+     * Test the displayDetails method of the Employee class.
+     * Verifies that the displayed details match the expected output.
+     */
+
     @Test
     void testEmployeeDetails() {
         String expectedDetails = "Employee Details:\n" +
@@ -61,20 +71,35 @@ public class EmployeeManagementSystemTest {
 
         assertEquals(expectedDetails, outputStream.toString().trim());
     }
-    
+
+    /**
+     * Test the addProject method of the Employee class.
+     * Verifies that a project is successfully added to the employee's projects.
+     */
+
     @Test
     void testAddProject() {
         employee.addProject(project);
         assertTrue(employee.getProjects().contains(project));
     }
-    
+
+    /**
+     * Test the removeProject method of the Employee class.
+     * Verifies that a project is successfully removed from the employee's projects.
+     */
+
     @Test
     void testRemoveProject() {
         employee.addProject(project);
         employee.removeProject(project);
         assertFalse(employee.getProjects().contains(project));
     }
-    
+
+    /**
+     * Test the calculateSalary method of the Employee class.
+     * Verifies that the calculated salary matches the expected result.
+     */
+
     @Test
     void testCalculateSalary() {
         assertEquals(9000.0, employee.calculateSalary(EmployeePosition.JUNIOR, 10000, 0.10), 0.01);
