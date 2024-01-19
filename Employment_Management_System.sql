@@ -1,11 +1,11 @@
 CREATE TABLE Positions (
-	PositionID INT PRIMARY KEY AUTO_INCREMENT,
+    PositionID INT PRIMARY KEY AUTO_INCREMENT,
     PositionName VARCHAR(100),
     Salary DECIMAL(10, 2)
 );
 
 CREATE TABLE Employees (
-	EmployeeID INT PRIMARY KEY AUTO_INCREMENT,
+    EmployeeID INT PRIMARY KEY AUTO_INCREMENT,
     EmployeeName VARCHAR(100),
     Age INT,
     Address VARCHAR(200),
@@ -19,14 +19,14 @@ CREATE TABLE Employees (
 );
 
 CREATE TABLE Projects (
-	ProjectID INT PRIMARY KEY AUTO_INCREMENT,
+    ProjectID INT PRIMARY KEY AUTO_INCREMENT,
     ProjectName VARCHAR(255),
     NumberOfTasks INT,
     Deadline DATE
     );
 
 CREATE TABLE SalaryGrades (
-	GradeID INT PRIMARY KEY AUTO_INCREMENT,
+    GradeID INT PRIMARY KEY AUTO_INCREMENT,
     PositionID INT,
     MinSalary DECIMAL(10, 2),
     MaxSalary DECIMAL(10, 2),
@@ -34,7 +34,7 @@ CREATE TABLE SalaryGrades (
 );
 
 CREATE TABLE EmployeeProjects (
-	EmployeeID INT,
+    EmployeeID INT,
     ProjectID INT,
     PRIMARY KEY(EmployeeID, ProjectID),
     FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID) ON DELETE CASCADE ON UPDATE CASCADE,
